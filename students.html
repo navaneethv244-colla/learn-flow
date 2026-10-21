@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>students</title>
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-800">
+
+    <div class="flex min-h-screen flex-col md:flex-row">
+
+        <!-- SIDEBAR -->
+        
+<!-- MOBILE / TABLET DRAWER SIDEBAR -->
+<aside
+  id="sidebar"
+  class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full
+         bg-white transition-transform lg:translate-x-0"
+  aria-label="Sidebar"
+>
+    <!-- Logo + Close Button -->
+    <div class="flex h-16 items-center justify-between border-b border-slate-200 px-5">
+
+        <h2 id="sidebar-title" class="text-lg font-bold text-blue-600">
+            <i class="fa-solid fa-graduation-cap mr-2"></i>
+            LearnFlow
+        </h2>
+
+        <!-- Close button: mobile and tablet only -->
+        <button
+            type="button"
+            data-drawer-hide="sidebar"
+            aria-controls="sidebar"
+            aria-label="Close sidebar"
+            class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 lg:hidden"
+        >
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+    </div>
+
+    <!-- Navigation -->
+     
+    <div class="p-4">
+
+        <p class="mb-3 px-2 text-[10px] font-semibold tracking-widest text-slate-400">
+            NAVIGATION
+        </p>
+
+        <nav class="space-y-2">
+
+            <a href="dashboard.html"
+               class="flex items-center gap-3 rounded-lg bg-blue-50 px-3 py-3 text-sm font-medium text-blue-600">
+                <i class="fa-regular fa-chart-bar"></i>
+                Dashboard
+            </a>
+
+            <a href="students.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-user-graduate"></i>
+                Students
+            </a>
+
+            <a href="instructor.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Instructors
+            </a>
+
+            <a href="courses.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-book"></i>
+                Courses
+            </a>
+
+            <a href="payments.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-wallet"></i>
+                Payments
+            </a>
+
+            <a href="settings.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+    </div>
+</aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="min-w-0 flex-1 lg:ml-64">
+
+            <!-- TOP NAVBAR -->
+            <header class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-6 lg:px-8">
+
+                <!-- Flowbite hamburger: visible on mobile/tablet only -->
+                <button
+                    type="button"
+                    data-drawer-target="sidebar"
+                    data-drawer-toggle="sidebar"
+                    aria-controls="sidebar"
+                    aria-label="Open navigation menu"
+                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden"
+                >
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+
+                <div>
+                    <p class="text-xs text-slate-400">LMS</p>
+                    <h2 class="text-sm font-semibold">Overview</h2>
+                </div>
+
+                <!-- Search -->
+                <div class="order-3 w-full sm:order-none sm:w-auto sm:flex-1 sm:max-w-sm sm:mx-3">
+                    <div class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
+                        <i class="fa-solid fa-magnifying-glass text-xs text-slate-400"></i>
+
+                        <input
+                            type="search"
+                            placeholder="Search students, courses..."
+                            class="min-w-0 w-full text-xs outline-none"
+                        >
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-2 text-[10px] font-medium text-emerald-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                    SYSTEM NORMAL
+                </span>
+
+                <!-- Admin -->
+                <div class="flex items-center gap-2">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxkN8C0AKf9X4glRboB1u-mKhgfJy1IInuCCi7gQwQA&s=10"
+                        class="h-8 w-8 rounded-full border border-slate-200 object-cover"
+                        alt="Admin profile"
+                    >
+
+                    <span class="text-sm font-medium">Alex</span>
+                </div>
+
+            </header>
+            <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+
+        <div>
+            <div class="flex flex-wrap items-center gap-2">
+                <h1 class="text-2xl font-bold tracking-tight text-slate-900">
+                    Students Management
+                </h1>
+                &nbsp;&nbsp;&nbsp;
+                <span class="rounded-full bg-blue-100 px-2 py-1 text-[12px] font-semibold text-blue-700">
+                    24,850 Total Students
+                </span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="rounded-full bg-emerald-100 px-2 py-1 text-[12px] font-semibold text-emerald-700">
+                    <i class="fa-solid fa-circle text-[7px]"></i>
+                    98.2% Active Rate
+                </span>
+            </div>
+
+            <p class="mt-1 text-xs text-slate-500">
+                Oversee global enrollment rosters, review cohort milestone completions, and issue credentials.
+            </p>
+        </div>
+
+       
+        <div class="flex flex-wrap items-center gap-2">
+
+            <button class="rounded-md border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-100">
+                <i class="fa-solid fa-download mr-1"></i>
+                Export CSV
+            </button>
+
+            <button class="rounded-md border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-100">
+                <i class="fa-solid fa-sliders mr-1"></i>
+                Filters
+            </button>
+
+            <button class="rounded-md bg-blue-600 px-3 py-2 text-xs font-semibold text-white hover:bg-blue-700">
+                <i class="fa-solid fa-user-plus mr-1"></i>
+                Add Student
+            </button>
+
+        </div>
+    </div>
+
+
+    <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+
+        
+        <div class="flex items-center justify-between rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+
+            <div>
+                <p class="text-[12px] font-semibold tracking-wider text-slate-500">
+                    ACTIVE COHORTS
+                </p>
+
+                <h2 class="mt-1 text-xl font-bold text-slate-900">
+                    18,420
+                </h2>
+
+                <p class="mt-1 text-[10px] text-emerald-700">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    +8.4% this month
+                </p>
+            </div>
+
+            <div class="flex h-10 w-10 items-center justify-center rounded-md bg-blue-100 text-blue-600">
+                <i class="fa-solid fa-users"></i>
+            </div>
+        </div>
+
+
+      
+        <div class="flex items-center justify-between rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+
+            <div>
+                <p class="text-[12px] font-semibold tracking-wider text-slate-500">
+                    AVG. COMPLETION
+                </p>
+
+                <h2 class="mt-1 text-xl font-bold text-slate-900">
+                    72.6%
+                </h2>
+
+                <p class="mt-1 text-[10px] text-emerald-700">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    +3.1% vs target
+                </p>
+            </div>
+
+            <div class="flex h-10 w-10 items-center justify-center rounded-md bg-blue-100 text-blue-600">
+                <i class="fa-solid fa-circle-notch text-lg"></i>
+            </div>
+        </div>
+
+
+        
+        <div class="flex items-center justify-between rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+
+            <div>
+                <p class="text-[12px] font-semibold tracking-wider text-slate-500">
+                    PENDING APPROVALS
+                </p>
+
+                <h2 class="mt-1 text-xl font-bold text-slate-900">
+                    142
+                </h2>
+
+                <p class="mt-1 text-[10px] text-amber-700">
+                    <i class="fa-regular fa-clock"></i>
+                    Needs verification
+                </p>
+            </div>
+
+            <div class="flex h-10 w-10 items-center justify-center rounded-md bg-amber-100 text-amber-700">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+        </div>
+
+
+       
+        <div class="flex items-center justify-between rounded-lg border border-slate-100 bg-white p-3 shadow-sm">
+
+            <div>
+                <p class="text-[12px] font-semibold tracking-wider text-slate-500">
+                    AT-RISK LEARNERS
+                </p>
+
+                <h2 class="mt-1 text-xl font-bold text-slate-900">
+                    86
+                </h2>
+
+                <p class="mt-1 text-[10px] text-red-600">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Inactive > 30d
+                </p>
+            </div>
+
+            <div class="flex h-10 w-10 items-center justify-center rounded-md bg-red-100 text-red-600">
+                <i class="fa-solid fa-user-minus"></i>
+            </div>
+        </div>
+
+    </div>
+
+
+ <!-- search div  -->
+
+ <div class="flex flex-col md:flex-row justify-between   sm:gap-1 mt-6   sm:text-sm bg-slate-50 p-3 gap-2">
+    <div class="sm:text-xs bg-slate-100 rounded xs border-none" >
+
+
+        <input class= " border p-3 lg:w-90 sm:w-40  sm:h-15  rounded md:text-"type="text" name="" id="" placeholder="🔍︎ Search by name, roll number,email ...">
+    </div>
+    <div class="flex flex-row items-center">
+
+        <label class=" p-3  font-semibold text-gray-700">
+    Status:
+</label> 
+ <select class="w-40p-3 rounded-lg
+                    bg-slate-100 text-gray-700
+                   focus:outline-none focus:ring-2 focus:ring-blue-500 lg:w-40 lg:h-10">
+
+        <option value="">All Statuses</option>
+        <option value="active">Active</option>
+        <option value="pending">Pending</option>
+        <option value="suspended">Suspended</option>
+        
+
+    </select> 
+    </div>
+
+    <div class="flex flex-row items-center">
+
+        <label class=" p-3  font-semibold text-gray-700">
+    Track:
+</label>
+ <select class="w-40p-3 rounded-lg
+                    bg-slate-100 text-gray-700
+                   focus:outline-none focus:ring-2 focus:ring-blue-500 lg:w-40 lg:h-10">
+
+        <option value="">All Tracks</option>
+        <option value="active">Full-Stack Development</option>
+        <option value="pending">Data Science & AI</option>
+        <option value="suspended">UI/UX Design</option>
+        <option value="active">Cybersecurity</option>
+     
+
+    </select> 
+    </div>
+    <div class="flex flex-row justify-center sm:text-sm items-center">
+
+        <label class=" p-3  font-semibold text-gray-700 ">
+    Joined:
+</label>&nbsp;
+ <select class="w-40p-3 rounded-lg 
+                    bg-slate-100 text-gray-700
+                   focus:outline-none focus:ring-2 focus:ring-blue-500 lg:w-40 lg:h-10">
+
+        <option value="">Days</option>
+        <option value="active">Last 90 days</option>
+        <option value="pending">Last 60 days</option>
+        <option value="suspended">Last 7 days</option>
+        
+
+    </select> 
+    </div>
+
+    
+
+    <div class="flex items-center ">
+        <button class=" font-semibold bg-slate-200 p-2 mr-2 rounded lg:w-30"> <i class="fa-solid fa-rotate-left" style="color: rgb(6, 6, 6);"></i> &nbsp; &nbsp;Reset</button>
+    </div>
+
+ </div>
+
+
+ <!-- student details   -->
+
+
+<!-- testtt  -->
+<div class="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+
+    <table class="w-full min-w-[1100px] text-left text-sm">
+
+        <!-- Table Heading -->
+        <thead class="bg-indigo-50 text-xs text-slate-700">
+            <tr>
+                <th class="p-4">
+                    <input type="checkbox">
+                </th>
+                <th class="p-4">STUDENT</th>
+                <th class="p-4">ENROLLED COURSES</th>
+                <th class="p-4">CURRICULUM PROGRESS</th>
+                <th class="p-4">JOINED DATE</th>
+                <th class="p-4">ACCOUNT STATUS</th>
+                <th class="p-4 text-center">ACTIONS</th>
+            </tr>
+        </thead>
+
+        <tbody class="divide-y divide-slate-200">
+
+            <!-- Student 1 -->
+            <tr class="hover:bg-slate-50">
+                <td class="p-4"><input type="checkbox"></td>
+
+                <td class="p-4 flex ">
+                    <img class="rounded-full " src="https://pict.ai/assets/img/ai-visa-photo-maker-portrait.webp" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Priya Sharma</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        priya.sharma@learnflow.edu
+                    </p>
+                    <p class="text-xs text-slate-400">ID: LF-84920</p>
+                    </div>
+                </td>
+
+                <td class="p-4">
+                    <span class="rounded-lg bg-blue-100 px-3 py-2 text-blue-700">
+                        5 Courses
+                    </span>
+                    <p class="mt-3 text-xs text-slate-500">AI & Data, Python</p>
+                </td>
+
+                <td class="p-4">
+                    <div class="w-44">
+                        <p class="mb-2 text-xs font-semibold text-slate-700">
+                            88% Completion
+                        </p>
+                        <div class="h-2 rounded-full bg-blue-100">
+                            <div class="h-2 w-[88%] rounded-full bg-blue-600"></div>
+                        </div>
+                        <p class="mt-1 text-xs text-slate-500">14 / 16 units</p>
+                    </div>
+                </td>
+
+                <td class="p-4 text-slate-600">14 Oct 2023</td>
+
+                <td class="p-4">
+                    <span class="rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">
+                        ● Active
+                    </span>
+                </td>
+
+                <!-- Actions -->
+                <td class="p-4">
+                    <div class="flex items-center justify-center gap-2">
+
+                        <button title="View Details"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                        <button title="Edit Student"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
+                        <button title="More Actions"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-slate-100">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Student 2 -->
+            <tr class="hover:bg-slate-50">
+                <td class="p-4"><input type="checkbox"></td>
+
+                 <td class="p-4 flex ">
+                    <img class="rounded-full " src="https://th.bing.com/th/id/OIP.iWkNxBzjhECKxcuqs8Nh-wHaHa?w=189&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Rohan Gupta</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                         rohan.gupta@learnflow.edu
+                    </p>
+                    <p class="text-xs text-slate-400">ID: LF-84921</p>
+                    </div>
+                </td>
+
+
+                <td class="p-4">
+                    <span class="rounded-lg bg-blue-100 px-3 py-2 text-blue-700">
+                        3 Courses
+                    </span>
+                    <p class="mt-3 text-xs text-slate-500">Cloud Systems</p>
+                </td>
+
+                <td class="p-4">
+                    <div class="w-44">
+                        <p class="mb-2 text-xs font-semibold text-slate-700">
+                            62% Completion
+                        </p>
+                        <div class="h-2 rounded-full bg-blue-100">
+                            <div class="h-2 w-[62%] rounded-full bg-blue-600"></div>
+                        </div>
+                        <p class="mt-1 text-xs text-slate-500">8 / 13 units</p>
+                    </div>
+                </td>
+
+                <td class="p-4 text-slate-600">02 Nov 2023</td>
+
+                <td class="p-4">
+                    <span class="rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">
+                        ● Active
+                    </span>
+                </td>
+
+                <td class="p-4">
+                    <div class="flex items-center justify-center gap-2">
+                        <button title="View Details"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                        <button title="Edit Student"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
+                        <button title="More Actions"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-slate-100">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Student 3 -->
+            <tr class="hover:bg-slate-50">
+                <td class="p-4"><input type="checkbox"></td>
+
+                
+
+
+                 <td class="p-4 flex ">
+                    <img class="rounded-full " src="https://tse3.mm.bing.net/th/id/OIP.d4ybg7D4KGpOpy5Pc0jUSAAAAA?r=0&pid=ImgDet&w=184&h=236&c=7&dpr=1.3&o=7&rm=3" width="50px"  alt=""> &nbsp;
+                    <div >
+                        <p class="font-semibold text-slate-800">Ananya Patel</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                             ananya.p@learnflow.edu
+                    </p>
+                    <p class="text-xs text-slate-400">ID: LF-84922</p>
+                    </div>
+                </td>
+
+                
+
+                <td class="p-4">
+                    <span class="rounded-lg bg-blue-100 px-3 py-2 text-blue-700">
+                        4 Courses
+                    </span>
+                    <p class="mt-3 text-xs text-slate-500">UX Research, Figma</p>
+                </td>
+
+                <td class="p-4">
+                    <div class="w-44">
+                        <p class="mb-2 text-xs font-semibold text-emerald-700">
+                            100% Completed
+                        </p>
+                        <div class="h-2 rounded-full bg-emerald-100">
+                            <div class="h-2 w-full rounded-full bg-emerald-600"></div>
+                        </div>
+                        <p class="mt-1 text-xs text-emerald-700">Certified</p>
+                    </div>
+                </td>
+
+                <td class="p-4 text-slate-600">28 Sep 2023</td>
+
+                <td class="p-4">
+                    <span class="rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">
+                        ● Active
+                    </span>
+                </td>
+
+                <td class="p-4">
+                    <div class="flex items-center justify-center gap-2">
+                        <button title="View Details"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                        <button title="Edit Student"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
+                        <button title="More Actions"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-slate-100">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Student 4 -->
+            <tr class="hover:bg-slate-50">
+                <td class="p-4"><input type="checkbox"></td>
+
+                 <td class="p-4 flex ">
+                    <img class="rounded-full " src="data:image/webp;base64,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" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Vikram Malhotra</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        v.malhotra@learnflow.edu
+                    </p>
+                    <p class="text-xs text-slate-400">ID: LF-84923</p>
+                    </div>
+                </td>
+                
+
+                <td class="p-4">
+                    <span class="rounded-lg bg-blue-100 px-3 py-2 text-blue-700">
+                        1 Course
+                    </span>
+                    <p class="mt-3 text-xs text-slate-500">Microservices in Go</p>
+                </td>
+
+                <td class="p-4">
+                    <div class="w-44">
+                        <p class="mb-2 text-xs font-semibold text-red-600">
+                            18% Stalled
+                        </p>
+                        <div class="h-2 rounded-full bg-red-100">
+                            <div class="h-2 w-[18%] rounded-full bg-red-600"></div>
+                        </div>
+                        <p class="mt-1 text-xs text-red-600">Inactive</p>
+                    </div>
+                </td>
+
+                <td class="p-4 text-slate-600">19 Aug 2023</td>
+
+                <td class="p-4">
+                    <span class="rounded-full bg-red-100 px-3 py-1 text-red-700">
+                        ● Suspended
+                    </span>
+                </td>
+
+                <td class="p-4">
+                    <div class="flex items-center justify-center gap-2">
+                        <button title="View Details"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                        <button title="Edit Student"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
+                        <button title="More Actions"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-slate-100">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Student 5 -->
+            <tr class="hover:bg-slate-50">
+                <td class="p-4"><input type="checkbox"></td>
+
+                 <td class="p-4 flex ">
+                    <img class="rounded-full" src="https://th.bing.com/th/id/OIP.aHj-B9ZcxOvvGUNqYqevmgHaHa?w=193&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Aarav Sen</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        aarav.sen@learnflow.edu
+                    </p>
+                    <p class="text-xs text-slate-400">ID: LF-84924</p>
+                    </div>
+                </td>
+                
+
+                <td class="p-4">
+                    <span class="rounded-lg bg-blue-100 px-3 py-2 text-blue-700">
+                        2 Courses
+                    </span>
+                    <p class="mt-3 text-xs text-slate-500">Data Structures</p>
+                </td>
+
+                <td class="p-4">
+                    <div class="w-44">
+                        <p class="mb-2 text-xs font-semibold text-slate-700">
+                            4% Orientation
+                        </p>
+                        <div class="h-2 rounded-full bg-blue-100">
+                            <div class="h-2 w-[4%] rounded-full bg-blue-600"></div>
+                        </div>
+                        <p class="mt-1 text-xs text-slate-500">1 / 18 units</p>
+                    </div>
+                </td>
+
+                <td class="p-4 text-slate-600">10 Jan 2024</td>
+
+                <td class="p-4">
+                    <span class="rounded-full bg-orange-100 px-3 py-1 text-orange-700">
+                        Pending Verification
+                    </span>
+                </td>
+
+                <td class="p-4">
+                    <div class="flex items-center justify-center gap-2">
+                        <button title="View Details"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                        <button title="Edit Student"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
+                        <button title="More Actions"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-slate-100">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Student 6 -->
+            <tr class="hover:bg-slate-50">
+                <td class="p-4"><input type="checkbox"></td>
+
+
+                 <td class="p-4 flex ">
+                    <img class="rounded-full " src="https://tse3.mm.bing.net/th/id/OIP.eunvU15N_RpmonUM5uRdJgHaKY?r=0&pid=ImgDet&w=184&h=258&c=7&dpr=1.3&o=7&rm=3" width="50px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Neha Reddy</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        neha.reddy@learnflow.edu
+                    </p>
+                    <p class="text-xs text-slate-400">ID: LF-84925</p>
+                    </div>
+                </td>
+                
+
+                <td class="p-4">
+                    <span class="rounded-lg bg-blue-100 px-3 py-2 text-blue-700">
+                        6 Courses
+                    </span>
+                    <p class="mt-3 text-xs text-slate-500">Strategic Leadership</p>
+                </td>
+
+                <td class="p-4">
+                    <div class="w-44">
+                        <p class="mb-2 text-xs font-semibold text-slate-700">
+                            95% Completion
+                        </p>
+                        <div class="h-2 rounded-full bg-blue-100">
+                            <div class="h-2 w-[95%] rounded-full bg-blue-600"></div>
+                        </div>
+                        <p class="mt-1 text-xs text-slate-500">21 / 22 units</p>
+                    </div>
+                </td>
+
+                <td class="p-4 text-slate-600">05 Dec 2023</td>
+
+                <td class="p-4">
+                    <span class="rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">
+                        ● Active
+                    </span>
+                </td>
+
+                <td class="p-4">
+                    <div class="flex items-center justify-center gap-2">
+                        <button title="View Details"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+
+                        <button title="Edit Student"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-600">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+
+                        <button title="More Actions"
+                        class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-slate-100">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!-- Footer  -->
+    <div class="flex flex-col gap-3 bg-indigo-50 p-4 text-sm sm:flex-row sm:items-center sm:justify-between">
+
+        <p class="text-slate-600">
+            Showing 1 to 6 of <span class="font-semibold text-slate-800">24,850</span> students
+        </p>
+
+        <div class="flex items-center gap-2">
+            <button class="rounded-lg border bg-white px-3 py-2 text-slate-400">
+                <i class="fa-solid fa-chevron-left"></i> Previous
+            </button>
+
+            <button class="rounded-lg bg-blue-600 px-3 py-2 text-white">1</button>
+            <button class="rounded-lg border bg-white px-3 py-2">2</button>
+            <button class="rounded-lg border bg-white px-3 py-2">3</button>
+
+            <span class="px-1">...</span>
+
+            <button class="rounded-lg border bg-white px-3 py-2">Next
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+
+
+</body>

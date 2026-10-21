@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>settings</title>
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-800">
+
+    <div class="flex min-h-screen flex-col md:flex-row">
+
+        <!-- SIDEBAR -->
+        
+<!-- MOBILE / TABLET DRAWER SIDEBAR -->
+<aside
+  id="sidebar"
+  class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full
+         bg-white transition-transform lg:translate-x-0"
+  aria-label="Sidebar"
+>
+    <!-- Logo + Close Button -->
+    <div class="flex h-16 items-center justify-between border-b border-slate-200 px-5">
+
+        <h2 id="sidebar-title" class="text-lg font-bold text-blue-600">
+            <i class="fa-solid fa-graduation-cap mr-2"></i>
+            LearnFlow
+        </h2>
+
+        <!-- Close button: mobile and tablet only -->
+        <button
+            type="button"
+            data-drawer-hide="sidebar"
+            aria-controls="sidebar"
+            aria-label="Close sidebar"
+            class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 lg:hidden"
+        >
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+    </div>
+
+    <!-- Navigation -->
+     
+    <div class="p-4">
+
+        <p class="mb-3 px-2 text-[10px] font-semibold tracking-widest text-slate-400">
+            NAVIGATION
+        </p>
+
+        <nav class="space-y-2">
+
+            <a href="dashboard.html"
+               class="flex items-center gap-3 rounded-lg bg-blue-50 px-3 py-3 text-sm font-medium text-blue-600">
+                <i class="fa-regular fa-chart-bar"></i>
+                Dashboard
+            </a>
+
+            <a href="students.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-user-graduate"></i>
+                Students
+            </a>
+
+            <a href="instructors.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Instructors
+            </a>
+
+            <a href="courses.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-book"></i>
+                Courses
+            </a>
+
+            <a href="payments.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-wallet"></i>
+                Payments
+            </a>
+
+            <a href="settings.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+    </div>
+</aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="min-w-0 flex-1 lg:ml-64">
+
+            <!-- TOP NAVBAR -->
+            <header class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-6 lg:px-8">
+
+                <!-- Flowbite hamburger: visible on mobile/tablet only -->
+                <button
+                    type="button"
+                    data-drawer-target="sidebar"
+                    data-drawer-toggle="sidebar"
+                    aria-controls="sidebar"
+                    aria-label="Open navigation menu"
+                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden"
+                >
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+
+                <div>
+                    <p class="text-xs text-slate-400">LMS</p>
+                    <h2 class="text-sm font-semibold">Overview</h2>
+                </div>
+
+                <!-- Search -->
+                <div class="order-3 w-full sm:order-none sm:w-auto sm:flex-1 sm:max-w-sm sm:mx-3">
+                    <div class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
+                        <i class="fa-solid fa-magnifying-glass text-xs text-slate-400"></i>
+
+                        <input
+                            type="search"
+                            placeholder="Search students, courses..."
+                            class="min-w-0 w-full text-xs outline-none"
+                        >
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-2 text-[10px] font-medium text-emerald-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                    SYSTEM NORMAL
+                </span>
+
+                <!-- Admin -->
+                <div class="flex items-center gap-2">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxkN8C0AKf9X4glRboB1u-mKhgfJy1IInuCCi7gQwQA&s=10"
+                        class="h-8 w-8 rounded-full border border-slate-200 object-cover"
+                        alt="Admin profile"
+                    >
+
+                    <span class="text-sm font-medium">Alex</span>
+                </div>
+
+            </header>
+
+            <!-- PAGE BODY -->
+            <div class="space-y-4 p-3 sm:p-5 lg:p-8">
+
+                <!-- PAGE TITLE -->
+                <section class="flex flex-col gap-4 rounded-lg border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+
+                    <div class="min-w-0">
+                        <h1 class="text-lg font-bold">
+                            Admin Account & Platform Settings
+                        </h1>
+
+                        <p class="mt-1 text-xs leading-5 text-slate-500">
+                            Manage your personal security credentials, team permissions, and platform-wide configuration.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            type="button"
+                            class="rounded-md bg-slate-100 px-3 py-2 text-xs hover:bg-slate-200"
+                        >
+                            Discard Changes
+                        </button>
+
+                        <button
+                            type="button"
+                            class="rounded-md bg-blue-600 px-3 py-2 text-xs text-white hover:bg-blue-700"
+                        >
+                            Save Settings
+                        </button>
+                    </div>
+
+                </section>
+
+                <!-- TABS -->
+                <div class="flex gap-5 border-b border-slate-200 bg-white px-4 pt-3">
+
+                    <button
+                        type="button"
+                        class="border-b-2 border-blue-600 pb-3 text-sm font-medium text-blue-600"
+                    >
+                        Profile
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pb-3 text-sm text-slate-500 hover:text-blue-600"
+                    >
+                       <a href="#security">security</a>
+                    </button>
+
+                </div>
+
+                <!-- PROFILE CARD -->
+                <section class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5">
+
+                    <div>
+                        <h2 class="text-sm font-semibold">Profile Details</h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            Manage your basic administrator credentials.
+                        </p>
+                    </div>
+
+                    <!-- Profile Image -->
+                    <div class="mt-5 flex flex-wrap items-center gap-4">
+
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxkN8C0AKf9X4glRboB1u-mKhgfJy1IInuCCi7gQwQA&s=10"
+                            alt="Alex profile"
+                            class="h-16 w-16 rounded-lg border border-slate-200 object-cover"
+                        >
+
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                type="button"
+                                class="rounded-md bg-blue-50 px-3 py-2 text-xs text-blue-700 hover:bg-blue-100"
+                            >
+                                <i class="fa-solid fa-upload mr-1"></i>
+                                Change
+                            </button>
+
+                            <button
+                                type="button"
+                                class="rounded-md bg-slate-100 px-3 py-2 text-xs hover:bg-slate-200"
+                            >
+                                Remove
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- PROFILE FORM -->
+                    <div class="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                        <div>
+                            <label for="firstName"
+                                   class="mb-1 block text-xs text-slate-600">
+                                First Name
+                            </label>
+
+                            <input
+                                id="firstName"
+                                type="text"
+                                value="Alex"
+                                class="h-9 w-full rounded-md border border-blue-100 bg-[#eef3ff] px-3 text-sm outline-none focus:border-blue-400"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="lastName"
+                                   class="mb-1 block text-xs text-slate-600">
+                                Last Name
+                            </label>
+
+                            <input
+                                id="lastName"
+                                type="text"
+                                value="Morgan"
+                                class="h-9 w-full rounded-md border border-blue-100 bg-[#eef3ff] px-3 text-sm outline-none focus:border-blue-400"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="email"
+                                   class="mb-1 block text-xs text-slate-600">
+                                Email Address
+                            </label>
+
+                            <div class="flex h-9 items-center gap-2 rounded-md border border-blue-100 bg-[#eef3ff] px-3">
+                                <i class="fa-regular fa-envelope text-xs text-slate-500"></i>
+
+                                <input
+                                    id="email"
+                                    type="email"
+                                    value="alex.morgan@learnflow.internal"
+                                    class="min-w-0 w-full bg-transparent text-xs outline-none"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="role"
+                                   class="mb-1 block text-xs text-slate-600">
+                                Role & Department
+                            </label>
+
+                            <input
+                                id="role"
+                                type="text"
+                                value="Curriculum & Platform Operations"
+                                class="h-9 w-full rounded-md border border-blue-100 bg-[#eef3ff] px-3 text-xs outline-none focus:border-blue-400"
+                            >
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- SECURITY CARD -->
+                <section id="security" class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5">
+
+                    <div class="border-b border-slate-100 pb-3">
+                        <h2 class="text-sm font-semibold">Security</h2>
+
+                        <p class="mt-1 text-xs text-slate-500">
+                            Manage password access and multi-factor authentication.
+                        </p>
+                    </div>
+
+                    <!-- PASSWORD FIELDS -->
+                    <div class="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2">
+
+                        <div>
+                            <label for="currentPassword"
+                                   class="mb-1 block text-xs text-slate-600">
+                                Current Password
+                            </label>
+
+                            <div class="flex h-9 items-center rounded-md border border-blue-100 bg-[#eef3ff] px-3">
+                                <input
+                                    id="currentPassword"
+                                    type="password"
+                                    placeholder="Enter current password"
+                                    class="min-w-0 w-full bg-transparent text-sm outline-none"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="ml-2 text-slate-500"
+                                    aria-label="Show or hide current password"
+                                >
+                                    <i id="eye1" class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="newPassword"
+                                   class="mb-1 block text-xs text-slate-600">
+                                New Password
+                            </label>
+
+                            <div class="flex h-9 items-center rounded-md border border-blue-100 bg-[#eef3ff] px-3">
+                                <input
+                                    id="newPassword"
+                                    type="password"
+                                    placeholder="Enter new password"
+                                    class="min-w-0 w-full bg-transparent text-sm outline-none"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="ml-2 text-slate-500"
+                                    aria-label="Show or hide new password"
+                                >
+                                    <i id="eye2" class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- TWO-FACTOR AUTHENTICATION -->
+                    <div class="mt-5 flex items-center justify-between gap-4 border-t border-slate-100 pt-4">
+
+                        <div class="min-w-0">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="text-xs font-semibold">
+                                    Two-Factor Authentication
+                                </h3>
+
+                                <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                            </div>
+
+                            <p class="mt-1 text-xs leading-5 text-slate-500">
+                                Authenticator app verification required on sign in.
+                            </p>
+                        </div>
+
+                        <label class="relative inline-flex shrink-0 cursor-pointer items-center">
+                            <input
+                                id="twoFactor"
+                                type="checkbox"
+                                checked
+                                class="peer sr-only"
+                            >
+
+                            <span class="h-5 w-9 rounded-full bg-slate-300 transition-colors peer-checked:bg-blue-600 after:absolute after:left-0.5 after:top-0.5 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-transform peer-checked:after:translate-x-4">
+                            </span>
+                        </label>
+
+                    </div>
+
+                </section>
+
+                <p class="pb-2 text-center text-xs text-slate-400">
+                    LearnFlow Admin Panel
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+</body>
+</html>

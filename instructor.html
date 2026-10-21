@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>instructors</title>
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-800">
+
+    <div class="flex min-h-screen flex-col md:flex-row">
+
+        <!-- SIDEBAR -->
+        
+<!-- MOBILE / TABLET DRAWER SIDEBAR -->
+<aside
+  id="sidebar"
+  class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full
+         bg-white transition-transform lg:translate-x-0"
+  aria-label="Sidebar"
+>
+    <!-- Logo + Close Button -->
+    <div class="flex h-16 items-center justify-between border-b border-slate-200 px-5">
+
+        <h2 id="sidebar-title" class="text-lg font-bold text-blue-600">
+            <i class="fa-solid fa-graduation-cap mr-2"></i>
+            LearnFlow
+        </h2>
+
+        <!-- Close button: mobile and tablet only -->
+        <button
+            type="button"
+            data-drawer-hide="sidebar"
+            aria-controls="sidebar"
+            aria-label="Close sidebar"
+            class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 lg:hidden"
+        >
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+    </div>
+
+    <!-- Navigation -->
+     
+    <div class="p-4">
+
+        <p class="mb-3 px-2 text-[10px] font-semibold tracking-widest text-slate-400">
+            NAVIGATION
+        </p>
+
+        <nav class="space-y-2">
+
+            <a href="dashboard.html"
+               class="flex items-center gap-3 rounded-lg bg-blue-50 px-3 py-3 text-sm font-medium text-blue-600">
+                <i class="fa-regular fa-chart-bar"></i>
+                Dashboard
+            </a>
+
+            <a href="students.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-user-graduate"></i>
+                Students
+            </a>
+
+            <a href="instructor.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Instructors
+            </a>
+
+            <a href="courses.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-book"></i>
+                Courses
+            </a>
+
+            <a href="payments.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-wallet"></i>
+                Payments
+            </a>
+
+            <a href="settings.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+    </div>
+</aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="min-w-0 flex-1 lg:ml-64">
+
+            <!-- TOP NAVBAR -->
+            <header class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-6 lg:px-8">
+
+                <!-- Flowbite hamburger: visible on mobile/tablet only -->
+                <button
+                    type="button"
+                    data-drawer-target="sidebar"
+                    data-drawer-toggle="sidebar"
+                    aria-controls="sidebar"
+                    aria-label="Open navigation menu"
+                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden"
+                >
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+
+                <div>
+                    <p class="text-xs text-slate-400">LMS</p>
+                    <h2 class="text-sm font-semibold">Overview</h2>
+                </div>
+
+                <!-- Search -->
+                <div class="order-3 w-full sm:order-none sm:w-auto sm:flex-1 sm:max-w-sm sm:mx-3">
+                    <div class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
+                        <i class="fa-solid fa-magnifying-glass text-xs text-slate-400"></i>
+
+                        <input
+                            type="search"
+                            placeholder="Search students, courses..."
+                            class="min-w-0 w-full text-xs outline-none"
+                        >
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-2 text-[10px] font-medium text-emerald-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                    SYSTEM NORMAL
+                </span>
+
+                <!-- Admin -->
+                <div class="flex items-center gap-2">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxkN8C0AKf9X4glRboB1u-mKhgfJy1IInuCCi7gQwQA&s=10"
+                        class="h-8 w-8 rounded-full border border-slate-200 object-cover"
+                        alt="Admin profile"
+                    >
+
+                    <span class="text-sm font-medium">Alex</span>
+                </div>
+
+            </header>
+             <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+        <div>
+            <div class="flex items-center gap-2">
+                <span class="text-[14px] font-bold tracking-wider text-blue-700">
+                    FACULTY GOVERNANCE
+                </span>
+                <span class="rounded-full bg-emerald-100 px-2 py-1 text-[14px] text-emerald-700">
+                    342 Verified Educators
+                </span>
+            </div>
+
+            <h1 class="mt-1 text-2xl font-bold">Instructors Directory</h1>
+
+            <p class="mt-1 max-w-xl text-xs text-slate-500">
+                Oversee pedagogical performance, compliance verifications,
+                and instructional course allocation.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+            <button class="rounded border bg-white px-3 py-2 text-sm">
+                <i class="fa-solid fa-download"></i> Export List
+            </button>
+
+            <button class="rounded bg-blue-50 px-3 py-2 text-sm text-blue-700">
+                <i class="fa-regular fa-envelope"></i> Invite Instructor
+            </button>
+
+            <button class="rounded bg-blue-600 px-3 py-2 text-xs text-white">
+                <i class="fa-solid fa-plus"></i> Add Instructor
+            </button>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+
+        <div class="rounded-lg border-b-2 border-emerald-400 bg-white p-3 shadow-sm">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-[10px] font-semibold text-slate-500 lg:text-[15px]">ACTIVE FACULTY</p>
+                    <h2 class="mt-1 text-xl font-bold">328
+                        <span class="text-[10px] text-emerald-600">+12 this qtr</span>
+                    </h2>
+                    <p class="text-[10px] text-slate-500">95.9% platform activity</p>
+                </div>
+                <i class="fa-regular fa-registered rounded-lg bg-emerald-100 p-3 text-emerald-700"></i>
+            </div>
+        </div>
+
+        <div class="rounded-lg border-b-2 border-orange-400 bg-white p-3 shadow-sm">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-[10px] font-semibold text-slate-500 lg:text-[15px]">PENDING APPLICATIONS</p>
+                    <h2 class="mt-1 text-xl font-bold">14
+                        <span class="text-[10px] text-orange-600">Requires review</span>
+                    </h2>
+                    <p class="text-[10px] text-slate-500">Avg turnaround 36 hrs</p>
+                </div>
+                <i class="fa-regular fa-clipboard rounded-lg bg-orange-100 p-3 text-orange-700"></i>
+            </div>
+        </div>
+
+        <div class="rounded-lg border-b-2 border-blue-400 bg-white p-3 shadow-sm">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-[10px] font-semibold text-slate-500 lg:text-[15px]">FACULTY SATISFACTION</p>
+                    <h2 class="mt-1 text-xl font-bold">4.8
+                        <span class="text-[10px] text-emerald-600">★ 98.4% CSAT</span>
+                    </h2>
+                    <p class="text-[10px] text-amber-500">★★★★★
+                        <span class="text-slate-500">(48.2k learner audits)</span>
+                    </p>
+                </div>
+                <i class="fa-solid fa-award rounded-lg bg-blue-100 p-3 text-blue-700"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="mt-4 flex flex-col gap-2 rounded-lg  bg-white p-3 sm:flex-row">
+
+        <input type="text"
+            placeholder="🔍︎ Filter by educator name, domain, credential, or email..."
+            class="min-w-0 flex-1 rounded border bg-slate-50 px-3 py-2 text-sm outline-blue-500">
+
+        <select class="rounded border bg-slate-50 px-3 py-2 text-sm">
+            <option>All Domains</option>
+            <option>Data Science & AI</option>
+            <option>Cloud & DevOps</option>
+            <option>Cybersecurity</option>
+            <option>Full Stack Web</option>
+        </select>
+
+        <select class="rounded border bg-slate-50 px-3 py-2 text-sm">
+            <option>All Statuses</option>
+            <option>Verified / Active</option>
+            <option>Pending Verification</option>
+            <option>Suspended</option>
+        </select>
+
+        <select class="rounded border bg-slate-50 px-3 py-2 text-sm">
+            <option>All Ratings</option>
+            <option>4.5 and above</option>
+            <option>Below 4.5</option>
+        </select>
+
+        <button class="px-2 text-slate-500" title="Filter">
+            <i class="fa-solid fa-filter"></i>
+        </button>
+    </div>
+
+    <!-- Instructor Table -->
+    <div class="mt-4 overflow-x-auto rounded-lg  bg-white shadow-sm">
+        <table class="w-full min-w-[1000px] text-left text-xs">
+
+            <thead class="bg-indigo-50 uppercase text-slate-600">
+                <tr>
+                    <th class="p-3"><input type="checkbox"></th>
+                    <th class="p-3">Instructor</th>
+                    <th class="p-3">Specialization Domain</th>
+                    <th class="p-3">Assigned Courses</th>
+                    <th class="p-3">Learners Taught</th>
+                    <th class="p-3">Avg Rating</th>
+                    <th class="p-3">Account Status</th>
+                    <th class="p-3">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody class="divide-y divide-slate-100">
+
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3"><input type="checkbox"></td>
+
+                    <td class="p-4 flex ">
+                    <img class="rounded-full " src="https://th.bing.com/th/id/OIP.j4eftJ6f3wVzvkrvBPW4LQHaHa?w=170&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Dr. Rajesh Rao</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        rajesh.rao@stanford.edu
+                    </p>
+                    <p class="text-xs text-slate-400">Joined Oct 2021</p>
+                    </div>
+                </td>
+                   
+                    <td class="p-3">
+                        <span class="rounded bg-blue-100 px-2 py-1">Data Science & AI</span>
+                        <p class="mt-2">Python · PyTorch</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded bg-blue-50 px-3 py-2 text-blue-700">▤ 8 Courses</span>
+                    </td>
+                    <td class="p-3">
+                        <p class="font-semibold">12,480</p>
+                        <p class="text-slate-400">Across 3 cohorts</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="text-amber-500">★</span> 4.9
+                        <span class="text-slate-400">(2.4k)</span>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded-full bg-emerald-100 px-2 py-1 text-emerald-700">● Verified / Active</span>
+                    </td>
+                    <td class="p-3">
+                        <div class="flex gap-3 text-slate-500">
+                            <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                            <button title="Suspend"><i class="fa-solid fa-ban"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3"><input type="checkbox"></td>
+                    <td class="p-4 flex ">
+                    <img class="rounded-full " src="https://th.bing.com/th/id/OIP.VCLUk6iB_g1fleChabpYngHaLH?w=132&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Sarah Jenkins</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        jenkins@creativeflow.design
+                    </p>
+                    <p class="text-xs text-slate-400">Joined Jan 2022</p>
+                    </div>
+                </td>
+                    
+                    <td class="p-3">
+                        <span class="rounded bg-blue-100 px-2 py-1">UX/UI Design</span>
+                        <p class="mt-2">Figma · Design Systems</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded bg-blue-50 px-3 py-2 text-blue-700">▤ 5 Courses</span>
+                    </td>
+                    <td class="p-3">
+                        <p class="font-semibold">8,910</p>
+                        <p class="text-slate-400">Top rated mentor</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="text-amber-500">★</span> 4.95
+                        <span class="text-slate-400">(3.1k)</span>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded-full bg-emerald-100 px-2 py-1 text-emerald-700">● Verified / Active</span>
+                    </td>
+                    <td class="p-3">
+                        <div class="flex gap-3 text-slate-500">
+                            <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                            <button title="Suspend"><i class="fa-solid fa-ban"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3"><input type="checkbox"></td>
+                    <td class="p-4 flex ">
+                    <img class="rounded-full " src="data:image/webp;base64,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" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Amitav Roy</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        amitav.roy@synthesislab.io
+                    </p>
+                    <p class="text-xs text-slate-400">Joined May 2023</p>
+                    </div>
+                </td>
+                    
+                    <td class="p-3">
+                        <span class="rounded bg-blue-100 px-2 py-1">Cloud & DevOps</span>
+                        <p class="mt-2">Kubernetes · AWS</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded bg-blue-50 px-3 py-2 text-blue-700">▤ 4 Courses</span>
+                    </td>
+                    <td class="p-3">
+                        <p class="font-semibold">5,140</p>
+                        <p class="text-slate-400">Enterprise track</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="text-amber-500">★</span> 4.82
+                        <span class="text-slate-400">(890)</span>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded-full bg-emerald-100 px-2 py-1 text-emerald-700">● Verified / Active</span>
+                    </td>
+                    <td class="p-3">
+                        <div class="flex gap-3 text-slate-500">
+                            <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                            <button title="Suspend"><i class="fa-solid fa-ban"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3"><input type="checkbox"></td>
+                    <td class="p-4 flex ">
+                    <img class="rounded-full " src="https://pict.ai/assets/img/ai-visa-photo-maker-portrait.webp" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Meera Nair</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        meera.cyber@defense-tech.org
+                    </p>
+                    <p class="text-xs text-slate-400">Submitted 2 days ago</p>
+                    </div>
+                </td>
+                   
+                    <td class="p-3">
+                        <span class="rounded bg-blue-100 px-2 py-1">Cybersecurity</span>
+                        <p class="mt-2">Zero Trust · Pen Testing</p>
+                    </td>
+                    <td class="p-3">Curriculum in Review</td>
+                    <td class="p-3">—</td>
+                    <td class="p-3 text-slate-400">No reviews yet</td>
+                    <td class="p-3">
+                        <span class="rounded-full bg-orange-100 px-2 py-1 text-orange-700">● Pending Verification</span>
+                        <button class="mt-2 rounded bg-emerald-100 px-2 py-1 text-emerald-700">Approve</button>
+                    </td>
+                    <td class="p-3">
+                        <div class="flex gap-3 text-slate-500">
+                            <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3"><input type="checkbox"></td>
+
+                    <td class="p-4 flex ">
+                    <img class="rounded-full " src="data:image/webp;base64,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" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">David Kim</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                      d.kim@kodepulse.dev
+                    </p>
+                    <p class="text-xs text-slate-400">Joined Aug 2022</p>
+                    </div>
+                </td>
+                    
+                    <td class="p-3">
+                        <span class="rounded bg-blue-100 px-2 py-1">Full Stack Web</span>
+                        <p class="mt-2">Next.js · Node.js</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded bg-blue-50 px-3 py-2 text-blue-700">▤ 6 Courses</span>
+                    </td>
+                    <td class="p-3">
+                        <p class="font-semibold">9,420</p>
+                        <p class="text-slate-400">Bootcamp alumni</p>
+                    </td>
+                    <td class="p-3">
+                        <span class="text-amber-500">★</span> 4.78
+                        <span class="text-slate-400">(1.7k)</span>
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded-full bg-emerald-100 px-2 py-1 text-emerald-700">● Verified / Active</span>
+                    </td>
+                    <td class="p-3">
+                        <div class="flex gap-3 text-slate-500">
+                            <button title="View"><i class="fa-regular fa-eye"></i></button>
+                            <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                            <button title="Suspend"><i class="fa-solid fa-ban"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3"><input type="checkbox"></td>
+                    <td class="p-4 flex ">
+                    <img class="rounded-full " src="data:image/webp;base64,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" width="60px" alt="">
+                    <div>
+                        <p class="font-semibold text-slate-800">Marcus Thorne</p>
+                    <p class="mt-1 text-xs text-slate-500">
+                        m.thorne@archcloud.org
+                    </p>
+                    <p class="text-xs text-slate-400">Suspended Nov 2023</p>
+                    </div>
+                </td>
+                    
+                    <td class="p-3">
+                        <span class="rounded bg-blue-100 px-2 py-1">Cloud & DevOps</span>
+                        <p class="mt-2">Docker</p>
+                    </td>
+                    <td class="p-3">2 Courses (Locked)</td>
+                    <td class="p-3">2,110</td>
+                    <td class="p-3">
+                        <span class="text-amber-500">★</span> 3.92
+                    </td>
+                    <td class="p-3">
+                        <span class="rounded-full bg-red-100 px-2 py-1 text-red-700">● Suspended</span>
+                    </td>
+                    <td class="p-3">
+                        <button class="rounded bg-blue-100 px-2 py-1 text-blue-700">Reinstate</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+<!-- footer   -->
+        <div class="flex flex-col gap-3 bg-white p-3 text-xs sm:flex-row sm:items-center">
+            <p class="text-slate-500">Showing 1 to 6 of <span class="font-semibold text-slate-800">342</span> instructors</p>
+
+            <div class="flex items-center gap-2">
+                <button class="rounded border px-2 py-1 text-slate-400">‹</button>
+                <button class="rounded bg-blue-600 px-3 py-2 text-white">1</button>
+                <button class="rounded border px-3 py-2">2</button>
+                <button class="rounded border px-3 py-2">3</button>
+                <span>...</span>
+                <button class="rounded border px-3 py-2">57</button>
+                <button class="rounded border px-2 py-1">›</button>
+            </div>
+        </div>
+    </div>
+    </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+</body>

@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>payments</title>
+
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-800">
+
+    <div class="flex min-h-screen flex-col md:flex-row">
+
+        <!-- SIDEBAR -->
+        
+<!-- MOBILE / TABLET DRAWER SIDEBAR -->
+<aside
+  id="sidebar"
+  class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full
+         bg-white transition-transform lg:translate-x-0"
+  aria-label="Sidebar"
+>
+    <!-- Logo + Close Button -->
+    <div class="flex h-16 items-center justify-between border-b border-slate-200 px-5">
+
+        <h2 id="sidebar-title" class="text-lg font-bold text-blue-600">
+            <i class="fa-solid fa-graduation-cap mr-2"></i>
+            LearnFlow
+        </h2>
+
+        <!-- Close button: mobile and tablet only -->
+        <button
+            type="button"
+            data-drawer-hide="sidebar"
+            aria-controls="sidebar"
+            aria-label="Close sidebar"
+            class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 lg:hidden"
+        >
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+    </div>
+
+    <!-- Navigation -->
+     
+    <div class="p-4">
+
+        <p class="mb-3 px-2 text-[10px] font-semibold tracking-widest text-slate-400">
+            NAVIGATION
+        </p>
+
+        <nav class="space-y-2">
+
+            <a href="dashboard.html"
+               class="flex items-center gap-3 rounded-lg bg-blue-50 px-3 py-3 text-sm font-medium text-blue-600">
+                <i class="fa-regular fa-chart-bar"></i>
+                Dashboard
+            </a>
+
+            <a href="students.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-user-graduate"></i>
+                Students
+            </a>
+
+            <a href="instructor.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Instructors
+            </a>
+
+            <a href="courses.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-book"></i>
+                Courses
+            </a>
+
+            <a href="payments.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-wallet"></i>
+                Payments
+            </a>
+
+            <a href="settings.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+    </div>
+</aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="min-w-0 flex-1 lg:ml-64">
+
+            <!-- TOP NAVBAR -->
+            <header class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-6 lg:px-8">
+
+                <!-- Flowbite hamburger: visible on mobile/tablet only -->
+                <button
+                    type="button"
+                    data-drawer-target="sidebar"
+                    data-drawer-toggle="sidebar"
+                    aria-controls="sidebar"
+                    aria-label="Open navigation menu"
+                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden"
+                >
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+
+                <div>
+                    <p class="text-xs text-slate-400">LMS</p>
+                    <h2 class="text-sm font-semibold">Overview</h2>
+                </div>
+
+                <!-- Search -->
+                <div class="order-3 w-full sm:order-none sm:w-auto sm:flex-1 sm:max-w-sm sm:mx-3">
+                    <div class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
+                        <i class="fa-solid fa-magnifying-glass text-xs text-slate-400"></i>
+
+                        <input
+                            type="search"
+                            placeholder="Search students, courses..."
+                            class="min-w-0 w-full text-xs outline-none"
+                        >
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-2 text-[10px] font-medium text-emerald-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                    SYSTEM NORMAL
+                </span>
+
+                <!-- Admin -->
+                <div class="flex items-center gap-2">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxkN8C0AKf9X4glRboB1u-mKhgfJy1IInuCCi7gQwQA&s=10"
+                        class="h-8 w-8 rounded-full border border-slate-200 object-cover"
+                        alt="Admin profile"
+                    >
+
+                    <span class="text-sm font-medium">Alex</span>
+                </div>
+
+            </header>
+              <!-- Main Content -->
+    <div class="max-w-7xl mx-auto p-5 md:p-8">
+
+        <!-- Page Heading -->
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
+
+            <div>
+                <h1 class="text-3xl font-bold text-slate-800">
+                    Payments
+                </h1>
+
+                <p class="text-sm text-slate-500 mt-2">
+                    Manage student payments and related records
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-3">
+
+                <button class="bg-white border border-slate-300 px-4 py-2 rounded-lg text-sm hover:bg-slate-50">
+                    ↓ Export
+                </button>
+
+                <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-700">
+                    + Add Payment
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Search and Filters -->
+        <section class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm mb-6">
+
+            <div class="flex flex-col lg:flex-row gap-3">
+
+                <!-- Search -->
+                <div class="flex items-center gap-3 border border-slate-200 rounded-lg px-3 py-2.5 flex-1">
+
+                    <span class="text-slate-400">⌕</span>
+
+                    <input
+                        type="text"
+                        placeholder="Search student by name, ID, email, or payment ID"
+                        class="outline-none w-full text-sm">
+
+                </div>
+
+                <!-- Cohort Filter -->
+                <select class="border border-slate-200 rounded-lg px-4 py-2.5 text-sm bg-white">
+                    <option>All Cohorts</option>
+                    <option>2024/2025</option>
+                    <option>2023/2024</option>
+                    <option>2022/2023</option>
+                </select>
+
+                <!-- Status Filter -->
+                <select class="border border-slate-200 rounded-lg px-4 py-2.5 text-sm bg-white">
+                    <option>All Status</option>
+                    <option>Paid</option>
+                    <option>Not Paid</option>
+            <option>Pending</option>
+                </select>
+
+                <!-- Category Filter -->
+                <select class="border border-slate-200 rounded-lg px-4 py-2.5 text-sm bg-white">
+                    <option>All Categories</option>
+                    <option>Registration Fee</option>
+                    <option>Tuition Fee</option>
+                    <option>Clearance Fee</option>
+                    <option>Certificate Fee</option>
+                </select>
+
+            </div>
+
+        </section>
+
+          <!-- Analytics Summary -->
+        <section>
+
+            <h2 class="text-xl font-semibold mb-4">
+                Analytics Summary
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+
+                <!-- Total Collected -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="bg-green-100 text-green-700 p-2 rounded-lg">
+    <i class="fa-solid fa-indian-rupee-sign"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="font-medium">Total Collected</h3>
+                            <p class="text-xs text-slate-500">This Session</p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3">
+
+                        <div class="flex-1">
+
+                            <div class="h-2.5 bg-slate-100 rounded-full">
+                                <div class="h-2.5 bg-green-500 rounded-full w-[70%]"></div>
+                            </div>
+
+                            <p class="text-xs text-slate-500 mt-2">
+                                70% of expected revenue
+                            </p>
+
+                        </div>
+
+                        <p class="font-bold text-lg">
+                            ₹2,350,000
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pending Payments -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+
+                    <div class="flex items-center gap-3 mb-4">
+
+                        <div class="bg-orange-100 p-2 rounded-lg">
+    <i class="fa-regular fa-clock text-orange-700"></i>
+</div>
+                        <div>
+                            <h3 class="font-medium">Pending Payments</h3>
+                            <p class="text-xs text-slate-500">This Session</p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3">
+
+                        <div class="flex-1">
+
+                            <div class="h-2.5 bg-slate-100 rounded-full">
+                                <div class="h-2.5 bg-orange-400 rounded-full w-[20%]"></div>
+                            </div>
+
+                            <p class="text-xs text-slate-500 mt-2">
+                                20% still processing
+                            </p>
+
+                        </div>
+
+                        <p class="font-bold text-lg">
+                            ₹500,000
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Unpaid Students -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+
+                    <div class="flex items-center gap-3 mb-4">
+
+                    <div class="bg-red-100 text-orange-700 p-2 rounded-lg">
+    <i class="fa-solid fa-user"></i>
+</div>
+
+                        <div>
+                            <h3 class="font-medium">Unpaid Students</h3>
+                            <p class="text-xs text-slate-500">This Session</p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-center gap-3">
+
+                        <div class="flex-1">
+
+                            <div class="h-2.5 bg-slate-100 rounded-full">
+                                <div class="h-2.5 bg-red-400 rounded-full w-[10%]"></div>
+                            </div>
+
+                            <p class="text-xs text-slate-500 mt-2">
+                                10% of students unpaid
+                            </p>
+
+                        </div>
+
+                        <p class="font-bold text-lg">
+                            45
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- 
+<div class="overflow-x-auto rounded-xl border border-slate-200">
+    <table class="w-full text-left text-xs whitespace-nowrap"> -->
+
+
+  <!-- Transactions -->
+                <section class="mt-6 bg-white rounded-xl border border-slate-200 p-6">
+
+                    <!-- Table Heading -->
+                    <div class="p-5 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+
+                        <div>
+                            <h3 class="text-lg font-semibold">
+                                Recent Transactions
+                            </h3>
+
+                            <p class="text-sm text-slate-500 mt-1">
+                                View and manage student payments
+                            </p>
+                        </div>
+
+                        <button class="text-blue-600 text-sm font-medium">
+                            View All Transactions →
+                        </button>
+
+                    </div>
+
+
+                    <!-- Search and Filters -->
+                    <div class="px-5 pb-5 flex flex-col md:flex-row gap-3">
+
+                        <div class="flex items-center gap-2 border border-slate-200 rounded-lg px-3 py-2.5 flex-1">
+                            <span class="text-slate-400">⌕</span>
+
+                            <input type="text"
+                                   placeholder="Search student or transaction ID"
+                                   class="outline-none text-sm w-full">
+                        </div>
+
+                        <select class="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white">
+                            <option>All Status</option>
+                            <option>Success</option>
+                            <option>Pending</option>
+                            <option>Failed</option>
+                            <option>Refunded</option>
+                        </select>
+
+                        <select class="border border-slate-200 rounded-lg px-3 py-2.5 text-sm bg-white">
+                            <option>All Methods</option>
+            <option>UPI</option>
+            <option>Card</option>
+            <option>Net Banking</option>
+                        </select>
+
+                    </div>
+         <!-- Table -->
+                    <div class="overflow-x-auto">
+
+                        <table class="w-full min-w-[900px] text-left">
+
+                            <thead class="bg-slate-50 text-slate-500 text-xs uppercase">
+
+                                <tr>
+                                    <th class="px-5 py-4 font-semibold">Transaction ID</th>
+                                    <th class="px-5 py-4 font-semibold">Student</th>
+                                    <th class="px-5 py-4 font-semibold">Course</th>
+                                    <th class="px-5 py-4 font-semibold">Amount</th>
+                                    <th class="px-5 py-4 font-semibold">Method</th>
+                                    <th class="px-5 py-4 font-semibold">Status</th>
+                                    <th class="px-5 py-4 font-semibold">Date</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody class="divide-y divide-slate-100 text-sm">
+
+                                <!-- Row 1 -->
+                                <tr class="hover:bg-slate-50">
+
+                                    <td class="px-5 py-4 font-medium text-blue-600">
+                                        TXN-1001
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <div class="flex items-center gap-3">
+
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-semibold text-xs">
+                                                PS
+                                            </div>
+
+                                            <div>
+                                                <p class="font-medium">Priya Sharma</p>
+                                                <p class="text-xs text-slate-500">priya@gmail.com</p>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        Web Development
+                                    </td>
+
+                                    <td class="px-5 py-4 font-semibold">
+                                        ₹5,000
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        UPI
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">
+                                            Success
+                                        </span>
+                                    </td>
+
+                                    <td class="px-5 py-4 text-slate-500">
+                                        20 Oct 2026
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Row 2 -->
+                                <tr class="hover:bg-slate-50">
+
+                                    <td class="px-5 py-4 font-medium text-blue-600">
+                                        TXN-1002
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <div class="flex items-center gap-3">
+
+                                            <div class="w-9 h-9 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center font-semibold text-xs">
+                                                RM
+                                            </div>
+
+                                            <div>
+                                                <p class="font-medium">Rahul Menon</p>
+                                                <p class="text-xs text-slate-500">rahul@gmail.com</p>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        Python Programming
+                                    </td>
+
+                                    <td class="px-5 py-4 font-semibold">
+                                        ₹3,500
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        Card
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td class="px-5 py-4 text-slate-500">
+                                        20 Oct 2026
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Row 3 -->
+                                <tr class="hover:bg-slate-50">
+
+                                    <td class="px-5 py-4 font-medium text-blue-600">
+                                        TXN-1003
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <div class="flex items-center gap-3">
+
+                                            <div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-semibold text-xs">
+                                                MB
+                                            </div>
+
+                                            <div>
+                                                <p class="font-medium">Meera Bhatia</p>
+                                                <p class="text-xs text-slate-500">meera@gmail.com</p>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        UI/UX Design
+                                    </td>
+
+                                    <td class="px-5 py-4 font-semibold">
+                                        ₹4,000
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        UPI
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">
+                                            Success
+                                        </span>
+                                    </td>
+
+                                    <td class="px-5 py-4 text-slate-500">
+                                        19 Oct 2026
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Row 4 -->
+                                <tr class="hover:bg-slate-50">
+
+                                    <td class="px-5 py-4 font-medium text-blue-600">
+                                        TXN-1004
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <div class="flex items-center gap-3">
+
+                                            <div class="w-9 h-9 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-semibold text-xs">
+                                                AK
+                                            </div>
+
+                                            <div>
+                                                <p class="font-medium">Arjun Kumar</p>
+                                                <p class="text-xs text-slate-500">arjun@gmail.com</p>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        Java Programming
+                                    </td>
+
+                                    <td class="px-5 py-4 font-semibold">
+                                        ₹2,500
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        Net Banking
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-medium">
+                                            Failed
+                                        </span>
+                                    </td>
+
+                                    <td class="px-5 py-4 text-slate-500">
+                                        19 Oct 2026
+                                    </td>
+
+                                </tr>
+
+
+                                <!-- Row 5 -->
+                                <tr class="hover:bg-slate-50">
+
+                                    <td class="px-5 py-4 font-medium text-blue-600">
+                                        TXN-1005
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <div class="flex items-center gap-3">
+
+                                            <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-semibold text-xs">
+                                                NK
+                                            </div>
+
+                                            <div>
+                                                <p class="font-medium">Neha Kapoor</p>
+                                                <p class="text-xs text-slate-500">neha@gmail.com</p>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        Full Stack Development
+                                    </td>
+
+                                    <td class="px-5 py-4 font-semibold">
+                                        ₹6,500
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        Card
+                                    </td>
+
+                                    <td class="px-5 py-4">
+                                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">
+                                            Success
+                                        </span>
+                                    </td>
+
+                                    <td class="px-5 py-4 text-slate-500">
+                                        18 Oct 2026
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center p-5 border-t border-slate-200 mt-4">
+
+                <p class="text-xs text-slate-500">
+                    Showing 1–4 of 4 students
+                </p>
+
+                <div class="flex gap-2">
+
+                    <button class="border border-slate-200 px-3 py-1 rounded text-sm text-slate-400">
+                        Previous
+                    </button>
+
+                    <button class="bg-indigo-600 text-white px-3 py-1 rounded text-sm">
+                        1
+                    </button>
+
+                    <button class="border border-slate-200 px-3 py-1 rounded text-sm">
+                        Next
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+      
+    </div>
+    </main>
+    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+
+    </body>

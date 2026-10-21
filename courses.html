@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course section</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .course-row {
+      transition: background-color 0.3s ease;
+    }
+
+    .course-row:hover {
+      background-color: #f8faff;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .published {
+      background-color: #d1fae5;
+      color: #047857;
+    }
+
+    .pending {
+      background-color: #ffedd5;
+      color: #9a3412;
+    }
+
+    .draft {
+      background-color: #e2e8f0;
+      color: #475569;
+    }
+
+    .archived {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .course-image {
+      width: 54px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+  
+    <div class="flex min-h-screen flex-col md:flex-row">
+
+        <!-- SIDEBAR -->
+        
+<!-- MOBILE / TABLET DRAWER SIDEBAR -->
+<aside
+  id="sidebar"
+  class="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full
+         bg-white transition-transform lg:translate-x-0"
+  aria-label="Sidebar"
+>
+    <!-- Logo + Close Button -->
+    <div class="flex h-16 items-center justify-between border-b border-slate-200 px-5">
+
+        <h2 id="sidebar-title" class="text-lg font-bold text-blue-600">
+            <i class="fa-solid fa-graduation-cap mr-2"></i>
+            LearnFlow
+        </h2>
+
+        <!-- Close button: mobile and tablet only -->
+        <button
+            type="button"
+            data-drawer-hide="sidebar"
+            aria-controls="sidebar"
+            aria-label="Close sidebar"
+            class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 lg:hidden"
+        >
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+    </div>
+
+    <!-- Navigation -->
+     
+    <div class="p-4">
+
+        <p class="mb-3 px-2 text-[10px] font-semibold tracking-widest text-slate-400">
+            NAVIGATION
+        </p>
+
+        <nav class="space-y-2">
+
+            <a href="dashboard.html"
+               class="flex items-center gap-3 rounded-lg bg-blue-50 px-3 py-3 text-sm font-medium text-blue-600">
+                <i class="fa-regular fa-chart-bar"></i>
+                Dashboard
+            </a>
+
+            <a href="students.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-user-graduate"></i>
+                Students
+            </a>
+
+            <a href="instructor.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Instructors
+            </a>
+
+            <a href="courses.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-book"></i>
+                Courses
+            </a>
+
+            <a href="payments.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-wallet"></i>
+                Payments
+            </a>
+
+            <a href="settings.html"
+               class="flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+    </div>
+</aside>
+ <main class="min-w-0 flex-1 lg:ml-64">
+
+            <!-- TOP NAVBAR -->
+            <header class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3 sm:px-6 lg:px-8">
+
+                <!-- Flowbite hamburger: visible on mobile/tablet only -->
+                <button
+                    type="button"
+                    data-drawer-target="sidebar"
+                    data-drawer-toggle="sidebar"
+                    aria-controls="sidebar"
+                    aria-label="Open navigation menu"
+                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 lg:hidden"
+                >
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+
+                <div>
+                    <p class="text-xs text-slate-400">LMS</p>
+                    <h2 class="text-sm font-semibold">Overview</h2>
+                </div>
+
+                <!-- Search -->
+                <div class="order-3 w-full sm:order-none sm:w-auto sm:flex-1 sm:max-w-sm sm:mx-3">
+                    <div class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
+                        <i class="fa-solid fa-magnifying-glass text-xs text-slate-400"></i>
+
+                        <input
+                            type="search"
+                            placeholder="Search students, courses..."
+                            class="min-w-0 w-full text-xs outline-none"
+                        >
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-2 text-[10px] font-medium text-emerald-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                    SYSTEM NORMAL
+                </span>
+
+                <!-- Admin -->
+                <div class="flex items-center gap-2">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxkN8C0AKf9X4glRboB1u-mKhgfJy1IInuCCi7gQwQA&s=10"
+                        class="h-8 w-8 rounded-full border border-slate-200 object-cover"
+                        alt="Admin profile"
+                    >
+
+                    <span class="text-sm font-medium">Alex</span>
+                </div>
+
+            </header>
+
+  <main class="max-w-[1600px] mx-auto p-3 sm:p-5">
+
+    <!-- HEADER -->
+    <header class="header-animation bg-white rounded-xl border border-slate-200 p-5 mb-6">
+      <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-5">
+
+        <div>
+          <div class="flex flex-wrap items-center gap-3">
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+              Courses
+            </h1>
+
+            <span class="bg-indigo-100 text-indigo-900 rounded-full px-3 py-1 text-xs font-semibold">
+              1,280 Courses
+            </span>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-2">
+            Review curricular, configure instructional pricing in INR, audit syllabus, and dispatch approvals.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <a href="#categories" class="bg-blue-50 text-slate-800 px-4 py-2.5 rounded-md text-sm hover:bg-blue-100">
+            <i class="fa-solid fa-diagram-project mr-2"></i>
+            Curriculum Categories
+          </a>
+
+          <a href="#review-queue" class="bg-orange-100 text-slate-800 px-4 py-2.5 rounded-md text-sm hover:bg-orange-200">
+            <i class="fa-regular fa-square-check mr-2"></i>
+            Review Queue
+            <span class="bg-orange-500 text-white rounded-full px-1.5 ml-1 text-xs">18</span>
+          </a>
+
+          <a href="#create-course" class="bg-blue-600 text-white px-4 py-2.5 rounded-md text-sm hover:bg-blue-700">
+            <i class="fa-solid fa-circle-plus mr-2"></i>
+            Create Course
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- COURSE TABS -->
+    <section class="bg-white rounded-xl border border-slate-200">
+
+      <div class="flex flex-wrap items-center justify-between gap-3 px-4 pt-4 border-b">
+
+        <div class="flex flex-wrap gap-5 text-sm">
+          <a href="" class="pb-3 font-semibold text-blue-600 border-b-2 border-blue-600">
+            All Courses <span class="ml-1 bg-blue-100 rounded-full px-2 text-xs">1,280</span>
+          </a>
+
+          <a href="" class="pb-3 text-slate-500 hover:text-blue-600">
+            Published <span class="ml-1 bg-slate-100 rounded-full px-2 text-xs">1,190</span>
+          </a>
+
+          <a href="" class="pb-3 text-slate-500 hover:text-blue-600">
+            Under Review <span class="ml-1 bg-orange-100 rounded-full px-2 text-xs">18</span>
+          </a>
+
+          <a href="" class="pb-3 text-slate-500 hover:text-blue-600">
+            Drafts <span class="ml-1 bg-slate-100 rounded-full px-2 text-xs">48</span>
+          </a>
+
+          <a href="" class="pb-3 text-slate-500 hover:text-blue-600">
+            Archived <span class="ml-1 bg-slate-100 rounded-full px-2 text-xs">24</span>
+          </a>
+        </div>
+
+        <div class="flex gap-2 pb-3">
+          <button class="border border-blue-100 bg-blue-50 text-blue-600 rounded-md px-3 py-2" aria-label="List view">
+            <i class="fa-solid fa-list"></i>
+          </button>
+          <button class="border border-slate-200 rounded-md px-3 py-2 text-slate-500" aria-label="Grid view">
+            <i class="fa-solid fa-border-all"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- SEARCH AND FILTERS: visual only -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3 p-4">
+
+        <div class="relative xl:col-span-2">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-3.5 text-slate-400"></i>
+          <input type="text"
+            placeholder="Search by course title, code, or instructor name..."
+            class="w-full bg-slate-50 border border-slate-200 rounded-md py-3 pl-9 pr-3 text-xs outline-none focus:border-blue-500">
+        </div>
+
+        <select class="bg-slate-50 border border-slate-200 rounded-md px-3 py-3 text-xs">
+          <option>All Categories</option>
+          <option>Development</option>
+          <option>Data Science</option>
+          <option>UI/UX Design</option>
+          <option>Marketing</option>
+        </select>
+
+        <select class="bg-slate-50 border border-slate-200 rounded-md px-3 py-3 text-xs">
+          <option>All Levels</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+
+        <div class="flex gap-2">
+          <select class="min-w-0 flex-1 bg-slate-50 border border-slate-200 rounded-md px-3 py-3 text-xs">
+            <option>Price: Any</option>
+            <option>Free</option>
+            <option>Paid</option>
+          </select>
+
+          <a href="#all-courses" class="bg-slate-100 hover:bg-slate-200 rounded-md px-3 py-3 text-xs">
+            <i class="fa-solid fa-rotate-left mr-1"></i> Reset
+          </a>
+        </div>
+
+      </div>
+
+      <!-- COURSE TABLE -->
+      <div class="table-animation overflow-x-auto">
+
+        <table class="w-full text-left min-w-[1050px]">
+
+          <thead class="bg-indigo-50 text-slate-600 text-[10px] uppercase tracking-wide">
+            <tr>
+              <th class="px-4 py-4 font-semibold">
+                <input type="checkbox" aria-label="Select all courses">
+              </th>
+              <th class="px-3 py-4 font-semibold">Course Details</th>
+              <th class="px-3 py-4 font-semibold">Instructor</th>
+              <th class="px-3 py-4 font-semibold">Category & Level</th>
+              <th class="px-3 py-4 font-semibold">Price</th>
+              <th class="px-3 py-4 font-semibold">Enrollments</th>
+              <th class="px-3 py-4 font-semibold">Rating</th>
+              <th class="px-3 py-4 font-semibold">Status</th>
+            </tr>
+          </thead>
+
+          <tbody class="divide-y divide-slate-100">
+
+            <tr id="all-courses" class="course-row">
+              <td class="px-4 py-5"><input type="checkbox" aria-label="Select Next.js course"></td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-3">
+                  <img class="course-image" src="https://placehold.co/108x88/e0e7ff/334155?text=Next.js" alt="Next.js course">
+                  <div>
+                    <p class="font-semibold text-sm">Full-Stack Next.js 14 & Tailwind</p>
+                    <p class="text-xs text-slate-500 mt-1"><span class="text-blue-600 font-semibold">CS-7049</span> · 48h duration</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-2">
+                  <img src="https://i.pravatar.cc/80?img=12" alt="" class="w-8 h-8 rounded-full">
+                  <div><p class="text-xs font-semibold">Midhun Manuel</p><p class="text-[10px] text-slate-500">Lead Architect</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5"><span class="bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-[10px]">Development</span><p class="text-xs mt-2">Intermediate</p></td>
+              <td class="px-3 py-5 font-bold text-sm">₹4,999</td>
+              <td class="px-3 py-5"><p class="text-sm font-medium">3,420</p><div class="w-14 h-1 bg-slate-200 rounded mt-2"><div class="w-10 h-1 bg-blue-600 rounded"></div></div></td>
+              <td class="px-3 py-5"><span class="bg-orange-50 text-orange-800 px-2 py-1 rounded text-xs">★ 4.8</span></td>
+              <td class="px-3 py-5"><span id="published" class="status published">● Published</span></td>
+            </tr>
+
+            <tr id="review-queue" class="course-row">
+              <td class="px-4 py-5"><input type="checkbox" aria-label="Select AI course"></td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-3">
+                  <img class="course-image" src="https://placehold.co/108x88/ede9fe/5b21b6?text=AI+%26+LLM" alt="AI course">
+                  <div><p class="font-semibold text-sm">Generative AI & LLM Fine-Tuning</p><p class="text-xs text-slate-500 mt-1"><span class="text-orange-700 font-semibold">DS-9012</span> · 32h duration</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-2">
+                  <img src="https://i.pravatar.cc/80?img=47" alt="" class="w-8 h-8 rounded-full">
+                  <div><p class="text-xs font-semibold">Mamtha Mohan</p><p class="text-[10px] text-slate-500">AI Researcher</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5"><span class="bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-[10px]">Data Science</span><p class="text-xs mt-2">Advanced</p></td>
+              <td class="px-3 py-5 font-bold text-sm">₹8,499</td>
+              <td class="px-3 py-5 text-center"><p class="text-sm font-medium">0</p><p class="text-[10px] text-slate-400 mt-1">Unreleased</p></td>
+              <td class="px-3 py-5 text-slate-400">—</td>
+              <td class="px-3 py-5"><span class="status pending">● Pending Review</span></td>
+            </tr>
+
+            <tr class="course-row">
+              <td class="px-4 py-5"><input type="checkbox" aria-label="Select design course"></td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-3">
+                  <img class="course-image" src="https://placehold.co/108x88/d1fae5/065f46?text=Design" alt="Design course">
+                  <div><p class="font-semibold text-sm">UI/UX Design</p><p class="text-xs text-slate-500 mt-1"><span class="text-blue-600 font-semibold">DES-3011</span> · 14h duration</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-2">
+                  <img src="https://i.pravatar.cc/80?img=33" alt="" class="w-8 h-8 rounded-full">
+                  <div><p class="text-xs font-semibold">Suresh Gopi</p><p class="text-[10px] text-slate-500">Staff Product Designer</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5"><span class="bg-emerald-100 text-emerald-800 rounded-full px-2 py-1 text-[10px]">UI/UX Design</span><p class="text-xs mt-2">Beginner</p></td>
+              <td class="px-3 py-5 font-bold text-sm text-green-700">Free</td>
+              <td class="px-3 py-5 text-sm">12,450</td>
+              <td class="px-3 py-5"><span class="bg-orange-50 text-orange-800 px-2 py-1 rounded text-xs">★ 4.9</span></td>
+              <td class="px-3 py-5"><span class="status published">● Published</span></td>
+            </tr>
+
+            <tr id="drafts" class="course-row">
+              <td class="px-4 py-5"><input type="checkbox" aria-label="Select Go course"></td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-3">
+                  <div class="course-image bg-blue-50 text-blue-500 flex items-center justify-center"><i class="fa-regular fa-file-lines text-lg"></i></div>
+                  <div><p class="font-semibold text-sm">Microservices with Go & gRPC</p><p class="text-xs text-slate-500 mt-1"><span class="font-semibold">GO-1090</span> · Unscheduled</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs">PK</div>
+                  <div><p class="text-xs font-semibold">Prakash K</p><p class="text-[10px] text-slate-500">Cloud Architect</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5"><span class="bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-[10px]">Development</span><p class="text-xs mt-2">Advanced</p></td>
+              <td class="px-3 py-5 font-bold text-sm">₹6,299</td>
+              <td class="px-3 py-5 text-slate-400">—</td>
+              <td class="px-3 py-5 text-slate-400">—</td>
+              <td class="px-3 py-5"><span class="status draft">● Draft</span></td>
+            </tr>
+
+            <tr id="archived" class="course-row">
+              <td class="px-4 py-5"><input type="checkbox" aria-label="Select Angular course"></td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-3">
+                  <div class="course-image bg-slate-100 text-slate-500 flex items-center justify-center"><i class="fa-solid fa-box-archive text-lg"></i></div>
+                  <div><p class="font-semibold text-sm">Data science</p><p class="text-xs text-slate-500 mt-1"><span class="font-semibold">JS-0104</span> · Deprecated</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center text-xs">SD</div>
+                  <div><p class="text-xs font-semibold">Sam Daniel</p><p class="text-[10px] text-slate-500">Former Faculty</p></div>
+                </div>
+              </td>
+              <td class="px-3 py-5"><span class="bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-[10px]">Development</span><p class="text-xs mt-2">Advanced</p></td>
+              <td class="px-3 py-5 font-bold text-sm">₹1,499</td>
+              <td class="px-3 py-5 text-sm">980</td>
+              <td class="px-3 py-5 text-sm">4.1</td>
+              <td class="px-3 py-5"><span class="status archived">● Archived</span></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PAGINATION UI -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 p-4 border-t text-xs text-slate-500">
+        <p>Showing 1 to 5 of 1,280 courses</p>
+
+        <div class="flex items-center gap-2">
+          <span>Rows per page:</span>
+          <select class="border rounded-md p-2 bg-white">
+            <option>25</option>
+            <option>50</option>
+            <option>100</option>
+          </select>
+
+          <a href="#all-courses" class="border rounded-md px-3 py-2 hover:bg-slate-50"><i class="fa-solid fa-chevron-left"></i></a>
+          <a href="#all-courses" class="bg-blue-600 text-white rounded-md px-3 py-2">1</a>
+          <a href="#all-courses" class="border rounded-md px-3 py-2 hover:bg-slate-50">2</a>
+          <a href="#all-courses" class="border rounded-md px-3 py-2 hover:bg-slate-50">3</a>
+          <span>...</span>
+          <a href="#all-courses" class="border rounded-md px-3 py-2 hover:bg-slate-50">256</a>
+          <a href="#all-courses" class="border rounded-md px-3 py-2 hover:bg-slate-50"><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+      </div>
+
+    </section>
+
+    <footer class="text-center text-xs text-slate-400 py-5">
+      Course Management Admin Panel · 2026
+    </footer>
+
+  </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.5.2/flowbite.min.js"></script>
+
+</body>
+</html>
